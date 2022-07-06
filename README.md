@@ -1,14 +1,14 @@
 # Lecture - Creating a Static Website Using S3
 
-![Untitled](Lecture%20-%20Creating%20a%20Static%20Website%20Using%20S3%20851115ce5b06472ba2b5bcfbda30d5b6/Untitled.png)
+![S3_image](./README_imgs/README_image.png)
 
 # Creating a Static Website - Lab
 
-This repository contains instructions for the Lab Lecture - Creating a Static Website 
+This repository contains instructions for the Lab Lecture - Creating a Static Website
 
 ## Static Website Creation using AWS CLI
 
-AWS Services Used: 
+AWS Services Used:
 
 - S3
     - Create a static website hosted in an S3 bucket
@@ -22,13 +22,13 @@ AWS Services Used:
 
 ## Project Structure
 
-The infrastructure for projecti s defined below: 
+The infrastructure for projecti s defined below:
 
 ```bash
 ├── README.md <------------- This guide to the project.
 ├── index.html <------------ website landing page
 ├── error.html <------------ error redirect page
-├── policy.json <----------- bucket policy 
+├── policy.json <----------- bucket policy
 └── animal.jpeg <---- ------ website image
 ```
 
@@ -38,12 +38,12 @@ The infrastructure for projecti s defined below:
 
 - AWS CLI Installed and Configured
     - Documentation: [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-    
+
     ```bash
-    # check if AWS configured your user correctly 
+    # check if AWS configured your user correctly
     aws sts get-caller-identity
     ```
-    
+
 - AWS IAM User Configured with S3 Permissions
 - An image of your favorite animal **[🐸](https://emojipedia.org/emoji/%F0%9F%90%B8/#:~:text=Unicode%20details%20for%20Frog%20Face%20(%F0%9F%90%B8)%20emoji.)**
 - This github repository in your local environment
@@ -58,7 +58,7 @@ The infrastructure for projecti s defined below:
     - Change $YOUR_LAST_NAME to yout last name
 
 ```bash
-#AWS Command: 
+#AWS Command:
 aws s3api create-bucket \
     --bucket $YOUR_FIRST_NAME-fullstack-$YOUR_LAST_NAME \
     --region us-east-1 \
@@ -72,9 +72,9 @@ aws s3api create-bucket \
 ```
 
 - If your bucket is successfully created, you should see the following message:
-    
-    ![Untitled](Lecture%20-%20Creating%20a%20Static%20Website%20Using%20S3%20851115ce5b06472ba2b5bcfbda30d5b6/Untitled%201.png)
-    
+
+    ![bucket_created](./README_imgs/create_bucket.png)
+
 
 ---
 
@@ -84,13 +84,13 @@ aws s3api create-bucket \
 - Check if the bucket was created by using the list-bucket command:
 
 ```bash
-#AWS Command: 
-aws s3 ls 
+#AWS Command:
+aws s3 ls
 ```
 
 - The following command should return back the name of your bucket:
 
-![Untitled](Lecture%20-%20Creating%20a%20Static%20Website%20Using%20S3%20851115ce5b06472ba2b5bcfbda30d5b6/Untitled%202.png)
+![check_bucket](./README_imgs/check_bucket.png)
 
 ---
 
